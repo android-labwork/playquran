@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingBottom="8dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginTop="8dp"
+    android:clickable="true"
+    android:background="?attr/selectableItemBackground"
+    tools:background="@drawable/ic_card"
+    android:focusable="true">
+
+    <TextView
+        android:id="@+id/item_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/title"
+        android:textSize="18sp"
+        android:textAlignment="textStart"
+        app:layout_constraintEnd_toStartOf="@+id/item_page"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="start" />
+
+    <TextView
+        android:id="@+id/item_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/description"
+        android:textSize="16sp"
+        android:textAlignment="textStart"
+        app:layout_constraintEnd_toStartOf="@+id/item_page"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_title"
+        android:gravity="start" />
+
+    <TextView
+        android:id="@+id/item_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/category"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/item_page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/page"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_category" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

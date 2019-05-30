@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">playquran</string>
+    <string name="app_name">Play Quran</string>
+
+    <!-- UTILITY -->
+    <string name="api_url">http://staging.quran.com:3000/api/v3/</string>
+
+    <!-- DUMMY -->
+    <string name="title">Dummy Title</string>
+    <string name="description">Dummy Description</string>
+    <string name="category">Category</string>
+    <string name="page">100 Pages</string>
 </resources>
