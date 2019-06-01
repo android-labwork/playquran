@@ -3,6 +3,7 @@ package com.aitekteam.developer.playquran.presenters;
 import android.content.Context;
 
 import com.aitekteam.developer.playquran.R;
+import com.aitekteam.developer.playquran.interfaces.LoaderHelper;
 import com.aitekteam.developer.playquran.interfaces.QuranAPI;
 import com.aitekteam.developer.playquran.models.Chapters;
 import com.aitekteam.developer.playquran.services.HttpsHandler;
@@ -17,10 +18,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainPresenter extends ViewModel implements Callback<Chapters> {
     private Context context;
-    private MainInterface handler;
+    private LoaderHelper handler;
     private MutableLiveData<Chapters> items;
 
-    public void setContext(Context context, MainInterface handler) {
+    public void setContext(Context context, LoaderHelper handler) {
         this.context = context;
         this.handler = handler;
     }
@@ -55,10 +56,5 @@ public class MainPresenter extends ViewModel implements Callback<Chapters> {
     @Override
     public void onFailure(Call<Chapters> call, Throwable t) {
         handler.onFinishLoad(false, "Failed To Request Server");
-    }
-
-    public interface MainInterface {
-        void onStartLoad();
-        void onFinishLoad(boolean status, String msg);
     }
 }

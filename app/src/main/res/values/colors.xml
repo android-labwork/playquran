@@ -6,4 +6,5 @@
 
     <color name="colorLight">#FFFFFF</color>
     <color name="colorDarkAlpha">#66AAAAAA</color>
+    <color name="colorDarkLightAlpha">#EFEFEF</color>
 </resources>

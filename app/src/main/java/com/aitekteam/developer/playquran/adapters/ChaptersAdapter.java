@@ -14,9 +14,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class ChaptersAdapter extends RecyclerView.Adapter<ChaptersAdapter.ViewHolder> {
     private Chapters items;
+    private OnChapterSelectedItem handler;
 
-    public ChaptersAdapter(Chapters items) {
+    public ChaptersAdapter(Chapters items, OnChapterSelectedItem handler) {
         this.items = items;
+        this.handler = handler;
     }
 
     @NonNull
@@ -43,7 +45,7 @@ public class ChaptersAdapter extends RecyclerView.Adapter<ChaptersAdapter.ViewHo
         return items.getItems().size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView title, description, category, page;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -52,6 +54,17 @@ public class ChaptersAdapter extends RecyclerView.Adapter<ChaptersAdapter.ViewHo
             description = itemView.findViewById(R.id.item_description);
             category = itemView.findViewById(R.id.item_category);
             page = itemView.findViewById(R.id.item_page);
+
+            itemView.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View v) {
+            handler.onSeletedItem(getAdapterPosition());
+        }
+    }
+
+    public interface OnChapterSelectedItem {
+        void onSeletedItem(int position);
     }
 }

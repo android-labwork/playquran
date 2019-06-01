@@ -86,7 +86,7 @@ public class Chapter implements Serializable {
         this.translatedName = translatedName;
     }
 
-    public class TranslatedName {
+    public class TranslatedName implements Serializable {
         @SerializedName("language_name")
         private String languageName;
         @SerializedName("name")
